@@ -19,16 +19,31 @@
     margin-bottom: 20px;
 }
 
-.auth-form input {
-    width: 98%;
-    padding-top: 10px;
-    padding-bottom: 10px;
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #d1d1d1;
+    border-radius: 5px;
+    font-size: large;
+    background-color: white;
+}
+
+select:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 3px rgba(59, 130, 246, 0.5);
+}
+
+input {
+    font-size: large;
+    width: 93%;
+    padding: 10px;
     margin-bottom: 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-.auth-form button {
+button {
     width: 100%;
     padding: 10px;
     background-color: var(--primary-blue);
@@ -38,7 +53,7 @@
     cursor: pointer;
 }
 
-.auth-form button:hover {
+button:hover {
     background-color: var(--primary-blue);
     transition: ease-in-out;
     scale: 1.02;
@@ -59,13 +74,19 @@
 }
 
 .error {
-    color: red;
-    text-align: center;
-    margin-bottom: 10px;
+    background: #ffdddd;
+    padding: 10px;
+    border-left: 4px solid #ff4d4d;
+    color: #a60000;
+    margin-bottom: 12px;
+    border-radius: 4px;
 }
 
 .success {
-    color: green;
-    text-align: center;
-    margin-bottom: 10px;
+    background: #ddffdd;
+    padding: 10px;
+    border-left: 4px solid #4dff4d;
+    color: #006600;
+    margin-bottom: 12px;
+    border-radius: 4px;
 }
