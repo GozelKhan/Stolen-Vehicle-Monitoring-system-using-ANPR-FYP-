@@ -25,3 +25,72 @@ ivms_project/
 ```
 
 ---
+## ⚙️ Backend Setup (Django + My SQL)
+
+### Requirements
+- Python 3.10+
+- pip (Python package manager)
+
+### Setup Steps
+```bash
+python -m venv venv
+source venv/bin/activate        # Windows: venv\Scripts\activate
+cd backend
+pip install -r requirements.txt
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+```
+Access API at 👉 [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+
+### Environment Variables
+Create `.env` file in `backend/`
+```env
+SECRET_KEY=your_secret_key_here
+DEBUG=True
+ALLOWED_HOSTS=*
+GOOGLE_MAPS_API_KEY=your_google_api_key_here
+```
+
+---
+## 💻 Frontend Setup (React)
+
+### Requirements
+- Node.js 18+
+
+### Setup Steps
+```bash
+cd frontend
+npm install
+npm run dev
+```
+Runs on 👉 [http://localhost:5173](http://localhost:5173)
+
+### Environment Variables
+Create `.env` in `frontend/`
+```env
+VITE_API_URL=http://127.0.0.1:8000
+VITE_MAPS_API_KEY=your_google_maps_key
+```
+
+---
+
+## 📱 Mobile App Setup (Flutter)
+
+### Requirements
+- Flutter SDK
+- Android Studio / VS Code with Flutter plugin
+
+### Setup Steps
+```bash
+cd track_vision
+flutter pub get
+flutter run
+```
+Set API base URL in:
+```dart
+lib/utils/constants.dart
+const String BASE_URL = "http://127.0.0.1:8000";
+```
+
+---
