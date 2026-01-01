@@ -94,3 +94,43 @@ const String BASE_URL = "http://127.0.0.1:8000";
 ```
 
 ---
+---
+
+## 🌐 Connecting All Components
+
+| Component | Command | Description |
+|------------|----------|-------------|
+| Backend | `daphne -p 8000 backend.asgi:application` | API & database |
+| AI Module | `python recognize_plate.py` | Detects plates |
+| React | `npm run dev` | Web dashboard |
+| Flutter | `flutter run` | Mobile app |
+
+---
+
+## 🧩 Features
+
+✅ Detects vehicle numbers using **YOLOv11 + OCR**  
+✅ Checks against stolen vehicle database  
+✅ Predicts possible **routes and locations**  
+✅ Sends **alerts & notifications**  
+✅ Interactive **Web Dashboard** and **Mobile App**
+
+---
+
+## 🧰 Troubleshooting
+
+| Issue | Solution |
+|-------|-----------|
+| `pip install` fails | Upgrade pip → `python -m pip install --upgrade pip` |
+| Django not running | Activate virtual environment |
+| React API error | Ensure backend is running |
+| Flutter API issue | Use system’s local IP instead of 127.0.0.1 |
+
+---
+
+## 🚀 Future Enhancements
+- GPS hardware tracking module
+- Real-time route heatmaps
+- Push notifications
+- Cloud deployment (AWS / Railway / Vercel)
+
