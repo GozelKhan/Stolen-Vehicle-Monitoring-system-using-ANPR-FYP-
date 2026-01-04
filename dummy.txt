@@ -1,2 +1,3 @@
 Initial project setup
 Added core project structure
+Implemented base functionality
