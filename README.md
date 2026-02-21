@@ -94,6 +94,7 @@ const String BASE_URL = "http://127.0.0.1:8000";
 ```
 
 ---
+
 ---
 
 ## 🌐 Connecting All Components
@@ -115,6 +116,7 @@ const String BASE_URL = "http://127.0.0.1:8000";
 ✅ Sends **alerts & notifications**  
 ✅ Interactive **Web Dashboard** and **Mobile App**
 
+
 ---
 
 ## 🧰 Troubleshooting
@@ -126,6 +128,7 @@ const String BASE_URL = "http://127.0.0.1:8000";
 | React API error | Ensure backend is running |
 | Flutter API issue | Use system’s local IP instead of 127.0.0.1 |
 
+
 ---
 
 ## 🚀 Future Enhancements
@@ -133,4 +136,5 @@ const String BASE_URL = "http://127.0.0.1:8000";
 - Real-time route heatmaps
 - Push notifications
 - Cloud deployment (AWS / Railway / Vercel)
+
 
