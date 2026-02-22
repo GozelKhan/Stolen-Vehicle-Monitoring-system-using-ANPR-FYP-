@@ -1,27 +1,39 @@
-## Minimal, compulsory backend dependencies for development
-
-# Core framework
+# ==============================
+# Core Framework
+# ==============================
 Django==5.0.4
 djangorestframework==3.14.0
 
-# JWT authentication (project settings reference simplejwt)
+# ==============================
+# Authentication (JWT)
+# ==============================
 djangorestframework-simplejwt
 
-# CORS (needed if frontend runs on separate origin)
+# ==============================
+# CORS (Frontend on separate origin)
+# ==============================
 django-cors-headers==3.13.0
 
-# Database driver (traceback used PyMySQL)
-PyMySQL
-mysqlclient==2.2.4
+# ==============================
+# Database (MySQL)
+# ==============================
+mysqlclient==2.2.4        # Recommended MySQL driver
+PyMySQL                   # Optional fallback driver
 
-# Channels + WebSockets
+# ==============================
+# WebSockets & Real-time (Channels)
+# ==============================
 channels==4.0.0
 channels-redis==4.1.0
 daphne==4.0.0
 
-# Image handling
+# ==============================
+# Media & Image Handling
+# ==============================
 Pillow==10.3.0
 
-# Environment and HTTP
+# ==============================
+# Environment & HTTP
+# ==============================
 python-dotenv==1.0.1
 requests==2.32.3
