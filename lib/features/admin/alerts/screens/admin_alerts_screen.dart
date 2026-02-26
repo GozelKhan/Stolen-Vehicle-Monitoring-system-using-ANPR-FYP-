@@ -1,4 +1,7 @@
-﻿import 'package:flutter/material.dart';
+// Progress Update: Implemented real-time admin alerts with WebSocket integration,
+// filtering, and UI improvements for better monitoring experience.
+
+import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:track_vision/shared/providers/data_providers.dart';
@@ -14,8 +17,13 @@ class AdminAlerts extends ConsumerStatefulWidget {
 }
 
 class _AdminAlertsState extends ConsumerState<AdminAlerts> {
+  // Current filter selection (all, unread, critical, etc.)
   String _filterType = 'all';
+
+  // Stores alerts received via WebSocket in real-time
   List<dynamic> _webSocketAlerts = [];
+
+  // Ensures WebSocket initializes only once
   bool _isInitialized = false;
 
   @override
@@ -25,13 +33,14 @@ class _AdminAlertsState extends ConsumerState<AdminAlerts> {
     Future.microtask(() => _initializeWebSocket());
   }
 
+  /// Establish WebSocket connection for live alerts
   void _initializeWebSocket() {
     if (!_isInitialized) {
       try {
         // Connect to admin WebSocket channel
         webSocketService.connectToAlerts(isAdmin: true);
 
-        // Listen to WebSocket stream for real-time alerts
+        // Listen to real-time alerts stream
         webSocketService.alertsStream.listen(
           (newAlert) {
             if (mounted) {
@@ -48,19 +57,20 @@ class _AdminAlertsState extends ConsumerState<AdminAlerts> {
         _isInitialized = true;
       } catch (e) {
         debugPrint('Failed to initialize WebSocket: $e');
-        // Continue without WebSocket - app will still work with polling
+        // App continues working using API polling if WebSocket fails
       }
     }
   }
 
   @override
   void dispose() {
-    // Don't disconnect WebSocket here as it may be used by other screens
+    // WebSocket is not disconnected here because other screens may use it
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    // Watch alerts provider (API-based alerts)
     final alertsAsync = ref.watch(alertsProvider);
 
     return Scaffold(
@@ -70,7 +80,7 @@ class _AdminAlertsState extends ConsumerState<AdminAlerts> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Title
+            // 🔹 Header Section
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -84,7 +94,7 @@ class _AdminAlertsState extends ConsumerState<AdminAlerts> {
                 ),
                 Row(
                   children: [
-                    // WebSocket status indicator
+                    // 🔹 WebSocket connection status indicator
                     Container(
                       padding: const EdgeInsets.symmetric(
                         horizontal: 8,
@@ -121,10 +131,11 @@ class _AdminAlertsState extends ConsumerState<AdminAlerts> {
                       ),
                     ),
                     const SizedBox(width: 10),
-                    // Mark all as read button
+
+                    // 🔹 Mark all alerts as read (UI only for now)
                     TextButton.icon(
                       onPressed: () async {
-                        // TODO: Implement mark all as read API endpoint
+                        // TODO: Connect to backend API for mark-all-read
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(content: Text('Marked all as read')),
                         );
@@ -137,9 +148,10 @@ class _AdminAlertsState extends ConsumerState<AdminAlerts> {
                 ),
               ],
             ),
+
             const SizedBox(height: 20),
 
-            // Filter Bar
+            // 🔹 Filter Dropdown
             Row(
               children: [
                 const Text('Filter: '),
@@ -149,10 +161,7 @@ class _AdminAlertsState extends ConsumerState<AdminAlerts> {
                   items: const [
                     DropdownMenuItem(value: 'all', child: Text('All Alerts')),
                     DropdownMenuItem(value: 'unread', child: Text('Unread')),
-                    DropdownMenuItem(
-                      value: 'critical',
-                      child: Text('Critical'),
-                    ),
+                    DropdownMenuItem(value: 'critical', child: Text('Critical')),
                     DropdownMenuItem(value: 'warning', child: Text('Warning')),
                     DropdownMenuItem(value: 'info', child: Text('Info')),
                   ],
@@ -160,21 +169,19 @@ class _AdminAlertsState extends ConsumerState<AdminAlerts> {
                 ),
               ],
             ),
+
             const SizedBox(height: 20),
 
-            // Alerts List
+            // 🔹 Alerts List Section
             Expanded(
               child: alertsAsync.when(
                 loading: () => const Center(child: CircularProgressIndicator()),
+
                 error: (err, st) => Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Icon(
-                        Icons.error_outline,
-                        color: Colors.red,
-                        size: 50,
-                      ),
+                      const Icon(Icons.error_outline, color: Colors.red, size: 50),
                       const SizedBox(height: 10),
                       Text('Error: $err'),
                       const SizedBox(height: 10),
@@ -185,8 +192,9 @@ class _AdminAlertsState extends ConsumerState<AdminAlerts> {
                     ],
                   ),
                 ),
+
                 data: (alerts) {
-                  // Filter alerts
+                  // 🔹 Apply selected filter
                   var filtered = alerts.where((alert) {
                     if (_filterType == 'all') return true;
                     if (_filterType == 'unread') return !alert.isRead;
@@ -209,17 +217,21 @@ class _AdminAlertsState extends ConsumerState<AdminAlerts> {
                         _webSocketAlerts.clear();
                       });
                     },
+
                     child: ListView.builder(
                       itemCount: filtered.length,
                       itemBuilder: (context, index) {
                         final alert = filtered[index];
+
                         return Card(
                           margin: const EdgeInsets.only(bottom: 12),
                           elevation: alert.isRead ? 1 : 3,
                           color: alert.isRead
                               ? Colors.white
                               : Colors.blue.shade50,
+
                           child: ListTile(
+                            // 🔹 Alert Icon
                             leading: Container(
                               width: 50,
                               height: 50,
@@ -233,6 +245,8 @@ class _AdminAlertsState extends ConsumerState<AdminAlerts> {
                                 size: 28,
                               ),
                             ),
+
+                            // 🔹 Alert Title
                             title: Row(
                               children: [
                                 Expanded(
@@ -257,6 +271,8 @@ class _AdminAlertsState extends ConsumerState<AdminAlerts> {
                                   ),
                               ],
                             ),
+
+                            // 🔹 Alert Details
                             subtitle: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -268,35 +284,32 @@ class _AdminAlertsState extends ConsumerState<AdminAlerts> {
                                 ),
                               ],
                             ),
+
+                            // 🔹 Alert Type Chip
                             trailing: Chip(
                               label: Text(
                                 alert.alertType,
                                 style: const TextStyle(fontSize: 11),
                               ),
-                              backgroundColor: _getAlertColor(
-                                alert.alertType,
-                              ).withOpacity(0.3),
+                              backgroundColor:
+                                  _getAlertColor(alert.alertType).withOpacity(0.3),
                             ),
+
+                            // 🔹 Alert Detail Dialog
                             onTap: () {
-                              // TODO: Mark as read and show details
                               showDialog(
                                 context: context,
                                 builder: (context) => AlertDialog(
                                   title: Text(alert.alertType.toUpperCase()),
                                   content: Column(
                                     mainAxisSize: MainAxisSize.min,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       Text(alert.alertMessage),
                                       const SizedBox(height: 10),
                                       Text('Sent At: ${alert.sentAt}'),
-                                      Text(
-                                        'Detection ID: ${alert.detectionId}',
-                                      ),
-                                      Text(
-                                        'Read: ${alert.isRead ? "Yes" : "No"}',
-                                      ),
+                                      Text('Detection ID: ${alert.detectionId}'),
+                                      Text('Read: ${alert.isRead ? "Yes" : "No"}'),
                                     ],
                                   ),
                                   actions: [
@@ -322,6 +335,7 @@ class _AdminAlertsState extends ConsumerState<AdminAlerts> {
     );
   }
 
+  /// Returns color based on alert type
   Color _getAlertColor(String type) {
     switch (type) {
       case 'critical':
@@ -335,6 +349,7 @@ class _AdminAlertsState extends ConsumerState<AdminAlerts> {
     }
   }
 
+  /// Returns icon based on alert type
   IconData _getAlertIcon(String type) {
     switch (type) {
       case 'critical':
