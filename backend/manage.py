@@ -5,19 +5,19 @@ import os
 import sys
 
 def main():
-    # Set Django settings file
+    # Configure Django settings
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'backend.settings')
 
     try:
-        # Import Django command executor
+        # Import Django command handler
         from django.core.management import execute_from_command_line
     except ImportError as exc:
-        # Show error if Django is not installed
+        # Error if Django is not installed
         raise ImportError("Couldn't import Django.") from exc
 
-    # Execute command (runserver, migrate, etc.)
+    # Run Django commands (runserver, migrate, etc.)
     execute_from_command_line(sys.argv)
 
-# Run main function
+# Start program
 if __name__ == '__main__':
     main()
