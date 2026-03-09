@@ -1,30 +1,40 @@
 """
 URL configuration for backend project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+This file maps URL routes to their corresponding views.
 """
+
 from django.contrib import admin
 from django.urls import path
-from users.views import RegisterView, LoginView, ForgotPasswordView, VerifyOTPView, ResetPasswordView
+from users.views import (
+    RegisterView,
+    LoginView,
+    ForgotPasswordView,
+    VerifyOTPView,
+    ResetPasswordView
+)
 
+# List of URL routes for the project
 urlpatterns = [
+    
+    # Django admin panel
     path('admin/', admin.site.urls),
+
+    # User registration
     path('signup/', RegisterView.as_view(), name='signup'),
+
+    # User login
     path('login/', LoginView.as_view(), name='login'),
+
+    # Forgot password request
     path('forgot-password/', ForgotPasswordView.as_view(), name='forgot-password'),
+
+    # OTP verification for password reset
     path('verify-otp/', VerifyOTPView.as_view(), name='verify-otp'),
+
+    # Reset password after OTP verification
     path('reset-password/', ResetPasswordView.as_view(), name='reset-password'),
+
+    # Future routes (currently disabled)
     # path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     # path('me/', UserProfileView.as_view(), name='user-profile'),
 ]
