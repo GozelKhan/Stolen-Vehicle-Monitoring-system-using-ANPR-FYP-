@@ -1,16 +1,11 @@
-# AI / ML Dependencies
-# These libraries are used for computer vision, OCR, and machine learning features
-
-opencv-python==4.10.0.84    
-numpy==1.26.4
-torch==2.3.0                 
-torchvision==0.18.0         
-ultralytics==8.2.0          
-pytesseract==0.3.10          
-Pillow==10.3.0               
-scikit-learn==1.5.0          
-pandas==2.2.2           
-
-# Note:
-# These packages are mainly required for the AI/ML module.
-# They are not necessary to run the basic Django backend.
+ultralytics
+opencv-python
+numpy
+torch
+torchvision
+easyocr
+fastapi
+uvicorn
+pillow
+shapely
+scikit-learn
