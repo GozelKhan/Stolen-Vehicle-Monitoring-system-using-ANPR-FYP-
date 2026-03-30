@@ -1,11 +1,9 @@
-ultralytics
-opencv-python
-numpy
-torch
-torchvision
-easyocr
-fastapi
-uvicorn
-pillow
-shapely
-scikit-learn
+- ultralytics: YOLO object detection models
+- opencv-python: Image processing and computer vision operations
+- numpy: Numerical computing and array operations
+- torch & torchvision: Deep learning framework and vision models
+- easyocr: Optical character recognition
+- fastapi & uvicorn: REST API framework and server
+- pillow: Image handling and manipulation
+- shapely: Geometric operations and spatial analysis
+- scikit-learn: Machine learning utilities and metrics
