@@ -1,0 +1,74 @@
+.dashboard-body {
+    display: flex;
+}
+
+.dashboard-content {
+    flex: 1;
+    padding: 20px 30px;
+    background-color: var(--bg-light);
+}
+
+.overview-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.dashboard-lower-section {
+  margin-top: 30px;
+}
+
+.vehicle-map-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.vehicle-card,
+.map-card {
+  flex: 1;
+  min-width: 300px;
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+}
+
+.vehicle-card:hover,
+.map-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .vehicle-map-container {
+    flex-direction: column;
+  }
+}
+
+/* Vehicle Table inside card */
+.vehicle-card table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.vehicle-card th,
+.vehicle-card td {
+  padding: 12px 10px;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.vehicle-card th {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Map card adjustments */
+.map-card iframe {
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
