@@ -1,5 +1,6 @@
 /** @format */
 
+<<<<<<< HEAD
 import "./styles/MapPreview.css";
 
 const MapPreview = ({
@@ -27,6 +28,17 @@ const MapPreview = ({
         allowFullScreen
         loading="lazy"
       ></iframe>
+=======
+import "./styles/components.css";
+
+const MapPreview = () => {
+  return (
+    <div className="map-preview">
+      <h2>Map Preview</h2>
+      <div className="map-placeholder">
+        <p>Map showing latest detections and alerts</p>
+      </div>
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
     </div>
   );
 };

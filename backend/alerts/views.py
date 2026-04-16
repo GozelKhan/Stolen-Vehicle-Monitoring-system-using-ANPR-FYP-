@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # views.py
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -69,3 +70,8 @@ class AlertDetailView(APIView):
         alert.isRead = True
         alert.save()
         return Response({"message": "Marked as read", "id": alert.id, "isRead": alert.isRead}, status=200)
+=======
+from django.shortcuts import render
+
+# Create your views here.
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5

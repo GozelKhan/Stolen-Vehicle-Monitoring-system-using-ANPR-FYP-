@@ -1,4 +1,5 @@
 /** @format */
+<<<<<<< HEAD
 import "./styles/Sidebar.css";
 import { NavLink } from "react-router-dom";
 import { Home, Camera, MessageSquareWarning, BadgeAlert } from "lucide-react";
@@ -52,6 +53,27 @@ const Sidebar = () => {
           >
             <Camera size={18} /> Camera
           </NavLink>
+=======
+
+import "./styles/Sidebar.css";
+import { Home, Car, Bell, MessageSquareWarning } from "lucide-react";
+
+const Sidebar = ({ onSelect }) => {
+  return (
+    <aside className="sidebar">
+      <ul>
+        <li onClick={() => onSelect("home")}>
+          <Home size={18} /> Home
+        </li>
+        <li onClick={() => onSelect("home")}>
+          <MessageSquareWarning size={18} /> Complaints
+        </li>
+        <li onClick={() => onSelect("vehicles")}>
+          <Car size={18} /> Vehicles
+        </li>
+        <li onClick={() => onSelect("alerts")}>
+          <Bell size={18} /> Alerts
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
         </li>
       </ul>
     </aside>

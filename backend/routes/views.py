@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .route_prediction import predict_routes
@@ -12,3 +13,8 @@ class RoutePredictionAPIView(APIView):
 
         predictions = predict_routes(plate, location)
         return Response({"predictions": predictions})
+=======
+from django.shortcuts import render
+
+# Create your views here.
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5

@@ -36,8 +36,13 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(unique=True)
     cnic = models.CharField(max_length=20, blank=True, null=True)
     phoneNumber = models.CharField(max_length=20, blank=True, null=True)
+<<<<<<< HEAD
     organizationName = models.CharField(max_length=20, blank=True, null=True)
     organizationCode = models.CharField(max_length=20, blank=True, null=True)
+=======
+    organization_name = models.CharField(max_length=20, blank=True, null=True)
+    organization_code = models.CharField(max_length=20, blank=True, null=True)
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
     role = models.CharField(max_length=20, choices=ROLE_CHOICES, default='user')
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)

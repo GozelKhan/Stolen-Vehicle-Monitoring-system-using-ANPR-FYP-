@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 :root {
   /* Primary Colors */
   --primary-blue: #1E3A8A;
@@ -31,4 +32,68 @@ body {
   margin: 0;
   padding: 0;
   transition: background-color 0.3s ease, color 0.3s ease;
+=======
+# /*
+
+Global CSS Variables
+These variables define the main color palette,
+fonts, and theme settings for the application.
+Using variables helps maintain consistency
+across the entire project.
+==========================
+
+*/
+
+:root {
+/* Primary brand color used for headers, buttons, and highlights */
+--primary-blue: #1E3A8A;
+
+```
+/* Secondary accent color used for links and UI highlights */
+--accent-blue: #3B82F6;
+
+/* Light background color used for main pages */
+--bg-light: #f9fafb;
+
+/* Dark background color (used if dark mode is implemented) */
+--bg-dark: #0f172a;
+
+/* Default text color for light theme */
+--text-light: #111827;
+
+/* Text color for dark theme */
+--text-dark: #e5e7eb;
+
+/* Main font family used throughout the application */
+--font-main: 'Poppins', 'Roboto', sans-serif;
+```
+
+}
+
+# /*
+
+Global Body Styling
+Applies default font, background color,
+and resets margin/padding for the entire website.
+=================================================
+
+*/
+
+body {
+/* Apply main font to the entire application */
+font-family: var(--font-main);
+
+```
+/* Set default background color */
+background-color: var(--bg-light);
+
+/* Set default text color */
+color: var(--text-light);
+
+/* Remove default browser spacing */
+margin: 0;
+padding: 0;
+```
+
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
 }

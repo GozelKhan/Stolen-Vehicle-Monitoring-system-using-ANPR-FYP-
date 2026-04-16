@@ -6,7 +6,10 @@ import Button from "../../components/Button";
 import { registerComplaint } from "../../../api/complaintApi";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+<<<<<<< HEAD
 import Loader from "../../components/Loader";
+=======
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
 
 export default function SubmitComplaintPage() {
   const navigate = useNavigate();
@@ -15,7 +18,10 @@ export default function SubmitComplaintPage() {
     : null;
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
+<<<<<<< HEAD
   const [loading, setLoading] = useState(false);
+=======
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
   const [formData, setFormData] = useState({
     ownerName: "",
     ownerEmail: "",
@@ -49,7 +55,11 @@ export default function SubmitComplaintPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+<<<<<<< HEAD
     setLoading(true);
+=======
+
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
     // Auto fill user data if user is normal user
     let finalData = { ...formData };
     if (user && user.role === "user") {
@@ -65,7 +75,11 @@ export default function SubmitComplaintPage() {
     }
 
     try {
+<<<<<<< HEAD
       console.log(finalData)
+=======
+      console.log("Submitting complaint with data:", finalData);
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
       const response = await registerComplaint(finalData);
       if (response.data.email_status.includes("Failed")) {
         setMessage(
@@ -91,11 +105,17 @@ export default function SubmitComplaintPage() {
     } catch (error) {
       setError("Something went wrong! Try again");
       console.error("Error submitting complaint:", error);
+<<<<<<< HEAD
     } finally {
       setLoading(false);
     }
   };
   if (loading) return <Loader />;
+=======
+    }
+  };
+
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
   return (
     <div className="complaint-container">
       <button className="back-button" onClick={goBack}>
@@ -114,6 +134,7 @@ export default function SubmitComplaintPage() {
                 name="ownerEmail"
                 type="email"
                 value={formData.ownerEmail}
+<<<<<<< HEAD
                 placeholder={"Ex. example@example.com"}
                 onChange={handleChange}
                 style={{ width: "90%" }}
@@ -124,6 +145,8 @@ export default function SubmitComplaintPage() {
                 type="text"
                 value={formData.ownerName}
                 placeholder={"Ex. Ali"}
+=======
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
                 onChange={handleChange}
                 style={{ width: "90%" }}
               />
@@ -133,7 +156,10 @@ export default function SubmitComplaintPage() {
                 name="ownerPhone"
                 type="text"
                 value={formData.ownerPhone}
+<<<<<<< HEAD
                 placeholder={"Ex. 0332332332"}
+=======
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
                 onChange={handleChange}
                 style={{ width: "90%" }}
               />
@@ -144,7 +170,10 @@ export default function SubmitComplaintPage() {
               name="ownerCnic"
               type="text"
               value={formData.ownerCnic}
+<<<<<<< HEAD
               placeholder={"Ex. 32123-1233231-2"}
+=======
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
               onChange={handleChange}
               style={{ width: "90%" }}
             />
@@ -158,7 +187,10 @@ export default function SubmitComplaintPage() {
             label="Make"
             name="vehicleMake"
             value={formData.vehicleMake}
+<<<<<<< HEAD
             placeholder={"Ex. Honda"}
+=======
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
             onChange={handleChange}
             style={{ width: "90%" }}
           />
@@ -167,7 +199,10 @@ export default function SubmitComplaintPage() {
             label="Model"
             name="vehicleModel"
             value={formData.vehicleModel}
+<<<<<<< HEAD
             placeholder={"Ex. 2025"}
+=======
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
             onChange={handleChange}
             style={{ width: "90%" }}
           />
@@ -178,7 +213,10 @@ export default function SubmitComplaintPage() {
             label="Variant"
             name="vehicleVariant"
             value={formData.vehicleVariant}
+<<<<<<< HEAD
             placeholder={"Ex. VXL"}
+=======
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
             onChange={handleChange}
             style={{ width: "90%" }}
           />
@@ -188,7 +226,10 @@ export default function SubmitComplaintPage() {
             name="vehicleColor"
             value={formData.vehicleColor}
             onChange={handleChange}
+<<<<<<< HEAD
             placeholder={"Ex. Black"}
+=======
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
             style={{ width: "90%" }}
           />
         </div>
@@ -198,7 +239,10 @@ export default function SubmitComplaintPage() {
             label="Plate Number"
             name="plateNumber"
             value={formData.plateNumber}
+<<<<<<< HEAD
             placeholder={"Ex. AAA-123"}
+=======
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
             onChange={handleChange}
             style={{ width: "90%" }}
           />
@@ -207,7 +251,10 @@ export default function SubmitComplaintPage() {
             label="Chassis Number"
             name="chassisNumber"
             value={formData.chassisNumber}
+<<<<<<< HEAD
             placeholder={"Ex. 4562ASA5621"}
+=======
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
             onChange={handleChange}
             style={{ width: "90%" }}
           />
@@ -218,7 +265,10 @@ export default function SubmitComplaintPage() {
           name="complaintDescription"
           rows="4"
           value={formData.complaintDescription}
+<<<<<<< HEAD
           placeholder={"Ex. White Honda Civic got stolen on 12th May from main murree road..."}
+=======
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
           onChange={handleChange}
         />
 

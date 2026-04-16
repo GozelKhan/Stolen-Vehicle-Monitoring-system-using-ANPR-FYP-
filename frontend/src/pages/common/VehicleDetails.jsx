@@ -27,7 +27,10 @@ export default function VehicleDetailsPage() {
         setComplaint(response.data);
       } catch (err) {
         setError("Failed to fetch vehicle details.");
+<<<<<<< HEAD
         console.error("Error fetching vehicle details:", err);
+=======
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
       } finally {
         setLoading(false);
       }
@@ -39,6 +42,10 @@ export default function VehicleDetailsPage() {
   if (loading) return <Loader />;
   if (error) return <p>{error}</p>;
   if (!complaint) return <p>No vehicle found.</p>;
+<<<<<<< HEAD
+=======
+  console.log("Vehicle Complaint", complaint);
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
 
   return (
     <div className="vehicle-details-container">
@@ -79,7 +86,11 @@ export default function VehicleDetailsPage() {
           {complaint.vehiclePicture && (
             <div className="vehicle-image-box">
               <img
+<<<<<<< HEAD
                 src={`http://localhost:8000${complaint.vehiclePicture}`}
+=======
+                src={`http://localhost:8000/${complaint.vehiclePicture}`}
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
                 alt="Vehicle"
                 className="vehicle-image"
               />

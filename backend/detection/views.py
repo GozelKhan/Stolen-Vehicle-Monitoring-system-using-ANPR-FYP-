@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import os
 import uuid
 import cv2
@@ -275,3 +276,8 @@ class AdminUnknownVehiclesAPIView(APIView):
             })
 
         return Response(data, status=200)
+=======
+from django.shortcuts import render
+
+# Create your views here.
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5

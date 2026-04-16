@@ -1,4 +1,5 @@
 from django.db import models
+<<<<<<< HEAD
 from complaints.models import Complaint
 class Detection(models.Model):
     complaint = models.ForeignKey(
@@ -37,3 +38,7 @@ class UnknownVehicle(models.Model):
 
     def __str__(self):
         return f"Unknown Vehicle - {self.detectedAt}"
+=======
+
+# Create your models here.
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5

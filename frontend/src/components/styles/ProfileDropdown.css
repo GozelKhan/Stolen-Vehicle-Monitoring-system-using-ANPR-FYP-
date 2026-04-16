@@ -69,10 +69,13 @@
     border: none;
     color: #6b7280;
     cursor: pointer;
+<<<<<<< HEAD
     transition: all 0.3s ease;
 }
 
 .close-dd:hover {
     color: #f1f5f9;
     transition: all 0.3s ease;
+=======
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
 }

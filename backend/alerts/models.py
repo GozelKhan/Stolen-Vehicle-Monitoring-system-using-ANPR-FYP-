@@ -1,4 +1,5 @@
 from django.db import models
+<<<<<<< HEAD
 from detection.models import Detection
 class Alert(models.Model):
     ALERT_TYPE = (
@@ -19,3 +20,7 @@ class Alert(models.Model):
 
     def __str__(self):
         return f"Alert for {self.detection.complaint.plateNumber}"
+=======
+
+# Create your models here.
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5

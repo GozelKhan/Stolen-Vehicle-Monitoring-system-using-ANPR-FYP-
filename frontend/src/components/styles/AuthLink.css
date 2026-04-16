@@ -14,7 +14,11 @@
     /* primary blue */
     padding: 8px 10px;
     border-radius: 8px;
+<<<<<<< HEAD
     transition: all 0.15s, color 0.15s, transform 0.08s;
+=======
+    transition: background 0.15s, color 0.15s, transform 0.08s;
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
 }
 
 /* left link is subtle, right link is emphasized */

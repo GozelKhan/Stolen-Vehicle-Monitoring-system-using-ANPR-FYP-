@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Dashboard Card */
 .dash-card {
   background-color: var(--card-bg);
@@ -40,3 +41,39 @@
   align-items: center;
   justify-content: center;
 }
+=======
+.dash-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: transform 0.2s;
+}
+
+.dash-card:hover {
+    transform: translateY(-4px);
+}
+
+.dash-card h3 {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 0;
+}
+
+.dash-card p {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--primary-blue);
+    margin: 0;
+}
+
+.card-icon {
+    background-color: var(--accent-blue);
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+}
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5

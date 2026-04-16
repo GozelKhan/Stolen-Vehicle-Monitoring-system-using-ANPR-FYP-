@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Minimal, compulsory backend dependencies for development
 
 # Core framework
@@ -15,13 +16,51 @@ PyMySQL
 mysqlclient==2.2.4
 
 # Channels + WebSockets
+=======
+# ==============================
+# Core Framework
+# ==============================
+Django==5.0.4
+djangorestframework==3.14.0
+
+# ==============================
+# Authentication (JWT)
+# ==============================
+djangorestframework-simplejwt
+
+# ==============================
+# CORS (Frontend on separate origin)
+# ==============================
+django-cors-headers==3.13.0
+
+# ==============================
+# Database (MySQL)
+# ==============================
+mysqlclient==2.2.4        # Recommended MySQL driver
+PyMySQL                   # Optional fallback driver
+
+# ==============================
+# WebSockets & Real-time (Channels)
+# ==============================
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
 channels==4.0.0
 channels-redis==4.1.0
 daphne==4.0.0
 
+<<<<<<< HEAD
 # Image handling
 Pillow==10.3.0
 
 # Environment and HTTP
+=======
+# ==============================
+# Media & Image Handling
+# ==============================
+Pillow==10.3.0
+
+# ==============================
+# Environment & HTTP
+# ==============================
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
 python-dotenv==1.0.1
 requests==2.32.3
