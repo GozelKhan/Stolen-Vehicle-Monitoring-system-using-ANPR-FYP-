@@ -1,63 +1,34 @@
-# /*
-
-Global CSS Variables
-These variables define the main color palette,
-fonts, and theme settings for the application.
-Using variables helps maintain consistency
-across the entire project.
-==========================
-
-*/
-
 :root {
-/* Primary brand color used for headers, buttons, and highlights */
---primary-blue: #1E3A8A;
+  /* Primary Colors */
+  --primary-blue: #1E3A8A;
+  --accent-blue: #3B82F6;
 
-```
-/* Secondary accent color used for links and UI highlights */
---accent-blue: #3B82F6;
+  /* Light Theme */
+  --bg: #f9fafb;
+  --text: #111827;
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --text-primary: #1E3A8A;
 
-/* Light background color used for main pages */
---bg-light: #f9fafb;
-
-/* Dark background color (used if dark mode is implemented) */
---bg-dark: #0f172a;
-
-/* Default text color for light theme */
---text-light: #111827;
-
-/* Text color for dark theme */
---text-dark: #e5e7eb;
-
-/* Main font family used throughout the application */
---font-main: 'Poppins', 'Roboto', sans-serif;
-```
-
+  /* Font */
+  --font-main: 'Poppins', 'Roboto', sans-serif;
 }
 
-# /*
+/* Dark Theme */
+body[data-theme='dark'] {
+  --bg: #0f172a;
+  --text: #ffffff;
+  --card-bg: #1e293b;
+  --text-primary: #cccccc;
+  --card-shadow: rgba(255, 255, 255, 0.192);
+}
 
-Global Body Styling
-Applies default font, background color,
-and resets margin/padding for the entire website.
-=================================================
-
-*/
-
+/* Apply variables */
 body {
-/* Apply main font to the entire application */
-font-family: var(--font-main);
-
-```
-/* Set default background color */
-background-color: var(--bg-light);
-
-/* Set default text color */
-color: var(--text-light);
-
-/* Remove default browser spacing */
-margin: 0;
-padding: 0;
-```
-
+  font-family: var(--font-main);
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }

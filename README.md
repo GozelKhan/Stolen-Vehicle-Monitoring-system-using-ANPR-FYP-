@@ -1,4 +1,5 @@
-﻿# Intelligent-Vehicle-Monitoring-system-using-ANPR-FYP-
+
+# 🚗 Intelligent Vehicle Monitoring System (IVMS)
 
 ## 🧠 Project Overview
 
@@ -18,14 +19,15 @@ This system includes:
 ivms_project/
 │
 ├── backend/              # Django backend (REST API)
-├── frontend_web/         # React Web Dashboard
-├── mobile_app/           # Flutter Mobile App
+├── frontend/         # React Web Dashboard
+├── track_vision/           # Flutter Mobile App
 ├── ai_module/            # YOLO + OCR scripts
 └── docs/                 # Documents and reports
 ```
 
 ---
-## ⚙️ Backend Setup (Django + My SQL)
+
+## ⚙️ Backend Setup (Django + MySQL)
 
 ### Requirements
 - Python 3.10+
@@ -37,9 +39,13 @@ python -m venv venv
 source venv/bin/activate        # Windows: venv\Scripts\activate
 cd backend
 pip install -r requirements.txt
-python manage.py makemigrations
+python manage.py makemigrations users
+python manage.py makemigrations complaints
+python manage.py makemigrations detection
+python manage.py makemigrations routes
+python manage.py makemigrations alerts
 python manage.py migrate
-python manage.py runserver
+daphne -p 8000 backend.asgi:application
 ```
 Access API at 👉 [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
@@ -53,6 +59,18 @@ GOOGLE_MAPS_API_KEY=your_google_api_key_here
 ```
 
 ---
+
+## 🤖 AI Module (YOLO + OCR)
+
+```bash
+cd ai_module
+python test_camera_feed.py
+python recognize_plate.py
+```
+This uses webcam input to detect number plates and extract text.
+
+---
+
 ## 💻 Frontend Setup (React)
 
 ### Requirements
@@ -95,8 +113,6 @@ const String BASE_URL = "http://127.0.0.1:8000";
 
 ---
 
----
-
 ## 🌐 Connecting All Components
 
 | Component | Command | Description |
@@ -116,7 +132,6 @@ const String BASE_URL = "http://127.0.0.1:8000";
 ✅ Sends **alerts & notifications**  
 ✅ Interactive **Web Dashboard** and **Mobile App**
 
-
 ---
 
 ## 🧰 Troubleshooting
@@ -128,7 +143,6 @@ const String BASE_URL = "http://127.0.0.1:8000";
 | React API error | Ensure backend is running |
 | Flutter API issue | Use system’s local IP instead of 127.0.0.1 |
 
-
 ---
 
 ## 🚀 Future Enhancements
@@ -136,5 +150,3 @@ const String BASE_URL = "http://127.0.0.1:8000";
 - Real-time route heatmaps
 - Push notifications
 - Cloud deployment (AWS / Railway / Vercel)
-
-
