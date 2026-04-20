@@ -26,6 +26,10 @@ export const fetchDetections = async (role) => {
 // Get single detection
 export const getDetectionDetails = async (id) => {
     return axios.get(`${API_BASE}detections/${id}/`);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 4518809402808e6ca5db71f9c83e1773a55a49d8
 };
 
 // Fetch unknown vehicles (admin only)
@@ -40,4 +44,9 @@ export const fetchUnknownVehicles = async () => {
         console.error("Error fetching unknown vehicles:", error);
         throw error;
     }
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
+>>>>>>> 4518809402808e6ca5db71f9c83e1773a55a49d8
 };

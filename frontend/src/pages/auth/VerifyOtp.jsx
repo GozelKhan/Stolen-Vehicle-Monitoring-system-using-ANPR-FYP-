@@ -47,7 +47,15 @@ export default function Login() {
           value={formData.otp}
           onChange={handleChange}
         />
+<<<<<<< HEAD
         <Button type="submit" label="Verify" style={{color:"#fff"}}/>
+=======
+<<<<<<< HEAD
+        <Button type="submit" label="Verify" style={{color:"#fff"}}/>
+=======
+        <Button type="submit" label="Login" />
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
+>>>>>>> 4518809402808e6ca5db71f9c83e1773a55a49d8
       </form>
     </div>
   );

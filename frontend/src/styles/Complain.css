@@ -9,9 +9,22 @@
 
 .complaint-main-container p {
     margin-bottom: 30px;
+<<<<<<< HEAD
     color: var(--text);
 }
 
+=======
+<<<<<<< HEAD
+    color: var(--text);
+}
+
+=======
+    color: #555;
+}
+
+/* Cards for options */
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
+>>>>>>> 4518809402808e6ca5db71f9c83e1773a55a49d8
 .complaint-options {
     display: flex;
     justify-content: center;
@@ -57,6 +70,13 @@ textarea {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+/* Tabs (if you use tabs later) */
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
+>>>>>>> 4518809402808e6ca5db71f9c83e1773a55a49d8
 .complaint-tabs {
     display: flex;
     gap: 20px;
@@ -108,6 +128,42 @@ textarea {
     background: darken(var(--primary-color), 10%);
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+/* Search Page */
+.search-bar {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Search Results */
+.search-results {
+    max-height: 500px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.search-result-item {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+.search-result-item p {
+    margin: 3px 0;
+}
+
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
+>>>>>>> 4518809402808e6ca5db71f9c83e1773a55a49d8
 .back-button {
     display: inline-flex;
     align-items: center;
@@ -144,6 +200,10 @@ textarea {
     margin-bottom: 12px;
     border-radius: 4px;
 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 4518809402808e6ca5db71f9c83e1773a55a49d8
 
 body[data-theme='dark'] .complaint-card, .complaint-main-container {
   background-color: var(--card-bg);
@@ -162,3 +222,8 @@ body[data-theme='dark'] .complaint-card p {
 body[data-theme='dark'] .complaint-subtitle {
   color: var(--text-primary);
 }
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
+>>>>>>> 4518809402808e6ca5db71f9c83e1773a55a49d8

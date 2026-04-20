@@ -1,9 +1,22 @@
 .sidebar {
     width: 220px;
+<<<<<<< HEAD
     height: 100vh;
     background-color: var(--primary-blue);
     color: var(--text-dark);
     overflow: hidden;
+=======
+<<<<<<< HEAD
+    height: 100vh;
+    background-color: var(--primary-blue);
+    color: var(--text-dark);
+    overflow: hidden;
+=======
+    background-color: var(--primary-blue);
+    color: var(--text-dark);
+    height: calc(100vh - 52px);
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
+>>>>>>> 4518809402808e6ca5db71f9c83e1773a55a49d8
     padding-top: 20px;
 }
 
@@ -18,11 +31,23 @@
     gap: 10px;
     padding: 12px 20px;
     cursor: pointer;
+<<<<<<< HEAD
     transition: all 0.3s ease;
+=======
+<<<<<<< HEAD
+    transition: all 0.3s ease;
+=======
+    transition: background 0.3s;
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
+>>>>>>> 4518809402808e6ca5db71f9c83e1773a55a49d8
 }
 
 .sidebar li:hover {
     background-color: #1e293b;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 4518809402808e6ca5db71f9c83e1773a55a49d8
 }
 
 .sidebar-link {
@@ -45,3 +70,9 @@
     font-weight: 600;
     color: white;
 }
+<<<<<<< HEAD
+=======
+=======
+}
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
+>>>>>>> 4518809402808e6ca5db71f9c83e1773a55a49d8

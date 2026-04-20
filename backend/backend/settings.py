@@ -28,8 +28,17 @@ SECRET_KEY = 'django-insecure-_l7s7f@0zdio_mb)t74b%r#aw6%sg1s%+vjt86w81%q=#68doo
 DEBUG = True
 
 ALLOWED_HOSTS = ['10.0.2.2', '127.0.0.1', 'localhost', '10.99.177.55']
+<<<<<<< HEAD
 OPENROUTE_API_KEY = "eyJvcmciOiI1YjNjZTM1OTc4NTExMTAwMDFjZjYyNDgiLCJpZCI6IjQ4Y2MxNzM1ZGNkYjRiOGM4MGQ3ODFlYmFhZDVmMmJjIiwiaCI6Im11cm11cjY0In0="
 
+=======
+<<<<<<< HEAD
+OPENROUTE_API_KEY = "eyJvcmciOiI1YjNjZTM1OTc4NTExMTAwMDFjZjYyNDgiLCJpZCI6IjQ4Y2MxNzM1ZGNkYjRiOGM4MGQ3ODFlYmFhZDVmMmJjIiwiaCI6Im11cm11cjY0In0="
+
+=======
+# new modules are updated
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
+>>>>>>> 4518809402808e6ca5db71f9c83e1773a55a49d8
 
 # Application definition
 
@@ -104,7 +113,11 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'visiontrack_db',
         'USER': 'root',
+<<<<<<< HEAD
+        'PASSWORD': '',  # leave empty if no password
+=======
         'PASSWORD': 'root',  # leave empty if no password
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
         'HOST': '127.0.0.1',
         'PORT': '3306',
         #  'OPTIONS': {

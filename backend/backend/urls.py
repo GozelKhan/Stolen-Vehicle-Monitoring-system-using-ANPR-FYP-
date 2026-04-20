@@ -5,7 +5,15 @@ from django.urls import path
 from users.views import RegisterView, LoginView, ForgotPasswordView, VerifyOTPView, ResetPasswordView, get_profile, update_profile
 from django.conf.urls.static import static
 from pathlib import Path
+<<<<<<< HEAD
 from detection.views import AdminUnknownVehiclesAPIView, DetectVehicleAPIView
+=======
+<<<<<<< HEAD
+from detection.views import AdminUnknownVehiclesAPIView, DetectVehicleAPIView
+=======
+from detection.views import DetectVehicleAPIView
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
+>>>>>>> 4518809402808e6ca5db71f9c83e1773a55a49d8
 from alerts.views import AlertDetailView, UserAlertsView
 
 VEHICLE_PICTURES_ROOT = Path(__file__).resolve().parent.parent / "vehicle_pictures"
@@ -42,10 +50,26 @@ urlpatterns = [
 
     path("detect/", DetectVehicleAPIView.as_view(), name="detect_vehicle"),
     path("detections/", DetectVehicleAPIView.as_view(), name="detections"),
+<<<<<<< HEAD
     path("detections/<int:id>/", DetectVehicleAPIView.as_view()),
     path("unknown-vehicles/", AdminUnknownVehiclesAPIView.as_view(), name="unknown-vehicles"),
+=======
+<<<<<<< HEAD
+    path("detections/<int:id>/", DetectVehicleAPIView.as_view()),
+    path("unknown-vehicles/", AdminUnknownVehiclesAPIView.as_view(), name="unknown-vehicles"),
+=======
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
+>>>>>>> 4518809402808e6ca5db71f9c83e1773a55a49d8
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+<<<<<<< HEAD
     
+=======
+<<<<<<< HEAD
+    
+=======
+    
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
+>>>>>>> 4518809402808e6ca5db71f9c83e1773a55a49d8

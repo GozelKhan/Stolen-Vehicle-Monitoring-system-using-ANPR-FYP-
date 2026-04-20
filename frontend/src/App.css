@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
 :root {
   /* Primary Colors */
   --primary-blue: #1E3A8A;
@@ -31,4 +34,69 @@ body {
   margin: 0;
   padding: 0;
   transition: background-color 0.3s ease, color 0.3s ease;
+=======
+# /*
+
+Global CSS Variables
+These variables define the main color palette,
+fonts, and theme settings for the application.
+Using variables helps maintain consistency
+across the entire project.
+==========================
+
+*/
+
+>>>>>>> 4518809402808e6ca5db71f9c83e1773a55a49d8
+:root {
+  /* Primary Colors */
+  --primary-blue: #1E3A8A;
+  --accent-blue: #3B82F6;
+
+  /* Light Theme */
+  --bg: #f9fafb;
+  --text: #111827;
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --text-primary: #1E3A8A;
+
+  /* Font */
+  --font-main: 'Poppins', 'Roboto', sans-serif;
+}
+
+/* Dark Theme */
+body[data-theme='dark'] {
+  --bg: #0f172a;
+  --text: #ffffff;
+  --card-bg: #1e293b;
+  --text-primary: #cccccc;
+  --card-shadow: rgba(255, 255, 255, 0.192);
+}
+
+/* Apply variables */
+body {
+<<<<<<< HEAD
+  font-family: var(--font-main);
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+=======
+/* Apply main font to the entire application */
+font-family: var(--font-main);
+
+```
+/* Set default background color */
+background-color: var(--bg-light);
+
+/* Set default text color */
+color: var(--text-light);
+
+/* Remove default browser spacing */
+margin: 0;
+padding: 0;
+```
+
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
+>>>>>>> 4518809402808e6ca5db71f9c83e1773a55a49d8
 }

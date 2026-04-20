@@ -115,6 +115,10 @@
 
 .chev {
     opacity: 0.9;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 4518809402808e6ca5db71f9c83e1773a55a49d8
 }
 
 /* Toggle Button Container */
@@ -153,3 +157,9 @@
 .toggle-btn .slider.dark {
   transform: translateX(24px);
 }
+<<<<<<< HEAD
+=======
+=======
+}
+>>>>>>> d4cac4720d4cace9d447997545cd6c0a379eefc5
+>>>>>>> 4518809402808e6ca5db71f9c83e1773a55a49d8
